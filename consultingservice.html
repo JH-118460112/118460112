@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Home {background-color: cornflowerblue;}
+#News {background-color: cornflowerblue;}
+#Contact {background-color: cornflowerblue;}
+#About {background-color: cornflowerblue;}
+h2 {
+  text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+<button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
+<button class="tablink" onclick="openPage('News', this, 'green')" id="defaultOpen">Blockchain</button>
+<button class="tablink" onclick="openPage('Contact', this, 'blue')">Automation</button>
+<button class="tablink" onclick="openPage('About', this, 'orange')">Immersive Experience</button>
+
+<div id="Home" class="tabcontent">
+  <h2>Home</h2>
+  <p></p>
+</div>
+
+<div id="News" class="tabcontent">
+  <h2>Blockchain</h2>
+  <h3>What is a blockchain?</h3>
+  <p>The blockchain is an incorruptible digital ledger of economic transactions that can be programmed to record not just financial transactions but virtually everything of value.” – Don & Alex Tapscott, authors Blockchain Revolution (2016).
+A blockchain is, in the simplest of terms, a time-stamped series of immutable record of data that is managed by cluster of computers not owned by any single entity. Each of these blocks of data (i.e. block) are secured and bound to each other using cryptographic principles (i.e. chain).
+<img src="bchain.png" alt="Blockchain" style="width:50%;">
+  </p> 
+</div>
+
+<div id="Contact" class="tabcontent">
+  <h2>Automation</h2>
+  <h3>What is automation?</h3>
+  <p>Automation is the technology by which a process or procedure is performed with minimum human assistance. Automation or automatic control is the use of various control systems for operating equipment such as machinery, processes in factories, boilers and heat treating ovens, switching on telephone networks, steering and stabilization of ships, aircraft and other applications and vehicles with minimal or reduced human intervention. Some processes have been completely automated.</p>
+  <img src="office-automation-system.jpg" alt="Automation" style="width:40%;">
+  
+</div>
+
+<div id="About" class="tabcontent">
+  <h2>Immersive Experience</h2>
+  <h3>What is Immersive Experience?</h3>
+  <p>An immersive experience is an illusory environment that completely surrounds you such that you feel that you are inside it and part of it. The term is associated with technology environments that command the senses such as virtual reality and mixed reality.</p>
+  <img src="immersive_experiences_v5.jpg" alt="Immersive Experience" style="width:40%;">
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
+
+
